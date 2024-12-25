@@ -68,7 +68,7 @@ body {
     transform: translateX(-50%); /* Center it horizontally */
     z-index: 9999;
     width: 100rem;
-    height: 40rem;
+    height: 45rem;
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
