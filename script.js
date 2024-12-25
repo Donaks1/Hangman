@@ -94,10 +94,17 @@ function checkWin(correctWord, typedText) {
 
 function checkLetters(correctWord, typedText, row) {
     for (let i=0; i<5; i++) {
+        let outputName = "output" + row + (i+1)
+        let cell = document.getElementById(outputName)
         if (typedText[i] === correctWord[i]){
-            let outputName = "output" + row + (i+1)
-            let cell = document.getElementById(outputName)
-            cell.style.backgroundColor = "green";
+            cell.style.backgroundColor = "lime";
+        }
+        else if (correctWord.includes(typedText[i])) {
+            cell.style.backgroundColor = "orange";
+        }
+        else {
+            // Incorrect letter
+            cell.style.backgroundColor = "grey";
         }
     }
 }
