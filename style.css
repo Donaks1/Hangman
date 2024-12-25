@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+}
+.wordlebox {
+    display: grid;
+    background-color: rgb(255, 255, 255);
+    width: 25rem;
+    height: 5rem;
+    grid-template-columns: 5rem 5rem 5rem 5rem 5rem; 
+}
+
+.wordlebox > div {
+    border: 2px solid #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    font-size: 2rem;
+}
+
+.bigdiv {
+    display: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.startscreen {
+    background: rgb(188, 188, 188);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.startbutton {
+    background: rgb(191, 191, 191);
+    width: 12rem;
+    height: 5rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4rem;
+}
+
+.startbutton:hover {
+    background: rgb(0, 0, 0);
+    color: aliceblue;
+}
+
+.start-title {
+    text-align: center; 
+    font-size: 6rem; 
+    color: rgb(93, 93, 93);
+}
+
+.game-title {
+    text-align: center;
+    font-size: 4rem; 
+    color: rgb(93, 93, 93);
+}
+
+#overbox {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Center it horizontally */
+    z-index: 9999;
+    width: 100rem;
+    height: 40rem;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #visibleInput {
+    border: none;              
+    outline: none;             
+    caret-color: transparent; 
+    width: 100%; 
+    box-sizing: border-box;
+    height: 5rem;
+    padding: 0;
+    margin: 0;
+    font-size: 3rem;
+    
+}
+
+/* #output {       
+    outline: none;             
+    caret-color: transparent;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+    overflow: hidden;
+    height: 3rem;
+    width: 3rem;
+    display: block;
+    position: relative;
+} */
