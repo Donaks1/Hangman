@@ -19,6 +19,25 @@ fetchWord().then((word) => {
     outputDiv1.textContent = word;
 });
 
+async function checkWord(typedText) {
+
+    const apiURL2 = "https://api.dictionaryapi.dev/api/v2/entries/en/" + typedText;
+
+    const response = await fetch(apiURL2);
+
+    const data = await response.json();
+
+    return data;
+}
+
+// checkWord().then((data) => {
+//     let result = data.title;
+//     if (result === "No Definitions Found") {
+//         alert("not a real word :(");
+//     }
+// });
+
+
 
 
 
@@ -63,12 +82,19 @@ document.addEventListener('keydown', (event) => {
 
     }
     else if (event.key === 'Enter' && position === 5) {
-        checkWin(correctWord, typedText);
-        checkLetters(correctWord, typedText, row);
-
-        row++;
-        position = 0;
-        typedText = '';
+        checkWord(typedText).then((data) => {
+            if (data.title === "No Definitions Found") {
+                alert("Not a real word :(");
+            } 
+            else {
+                checkWin(correctWord, typedText);
+                checkLetters(correctWord, typedText, row);
+                
+                row++;
+                position = 0;
+                typedText = '';
+            }
+        });
     }
     
 
