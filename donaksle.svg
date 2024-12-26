@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 625 89.39">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #005dff;
+      }
+
+      .cls-1, .cls-2 {
+        font-family: MicrosoftYaHeiUI-Bold, 'Microsoft YaHei UI';
+        font-size: 72px;
+        font-weight: 700;
+      }
+
+      .cls-3 {
+        fill: #f7931e;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .cls-2 {
+        fill: #f2f2f2;
+      }
+
+      .cls-4 {
+        fill: #4d4d4d;
+      }
+
+      .cls-5 {
+        fill: #d00000;
+      }
+
+      .cls-6 {
+        fill: #39b54a;
+      }
+    </style>
+  </defs>
+  <rect class="cls-5" x="2" y="2" width="77" height="77"/>
+  <rect class="cls-4" x="82" y="2" width="77" height="77"/>
+  <rect class="cls-6" x="159" y="2" width="77" height="77"/>
+  <rect class="cls-6" x="236" y="2" width="77" height="77"/>
+  <rect class="cls-4" x="313" y="2" width="77" height="77"/>
+  <rect class="cls-4" x="390" y="2" width="77" height="77"/>
+  <rect class="cls-3" x="467" y="2" width="77" height="77"/>
+  <rect class="cls-4" x="546" y="2" width="77" height="77"/>
+  <g>
+    <text class="cls-1" transform="translate(13.1 68.55)"><tspan x="0" y="0">D </tspan></text>
+    <text class="cls-2" transform="translate(13.1 68.55)"><tspan x="0" y="0">D </tspan></text>
+  </g>
+  <g>
+    <text class="cls-1" transform="translate(90.1 68.55)"><tspan x="0" y="0">O</tspan></text>
+    <text class="cls-2" transform="translate(90.1 68.55)"><tspan x="0" y="0">O</tspan></text>
+  </g>
+  <g>
+    <text class="cls-1" transform="translate(326.1 70.55)"><tspan x="0" y="0">K</tspan></text>
+    <text class="cls-2" transform="translate(326.1 70.55)"><tspan x="0" y="0">K</tspan></text>
+  </g>
+  <g>
+    <text class="cls-1" transform="translate(408.1 68.55)"><tspan x="0" y="0">S</tspan></text>
+    <text class="cls-2" transform="translate(408.1 68.55)"><tspan x="0" y="0">S</tspan></text>
+  </g>
+  <g>
+    <text class="cls-1" transform="translate(168.1 68.55)"><tspan x="0" y="0">N</tspan></text>
+    <text class="cls-2" transform="translate(168.1 68.55)"><tspan x="0" y="0">N</tspan></text>
+  </g>
+  <g>
+    <text class="cls-1" transform="translate(247.1 69.55)"><tspan x="0" y="0">A</tspan></text>
+    <text class="cls-2" transform="translate(247.1 69.55)"><tspan x="0" y="0">A</tspan></text>
+  </g>
+  <g>
+    <text class="cls-1" transform="translate(488.1 68.55)"><tspan x="0" y="0">L</tspan></text>
+    <text class="cls-2" transform="translate(488.1 68.55)"><tspan x="0" y="0">L</tspan></text>
+  </g>
+  <g>
+    <text class="cls-1" transform="translate(566.1 70.55)"><tspan x="0" y="0">E</tspan></text>
+    <text class="cls-2" transform="translate(566.1 70.55)"><tspan x="0" y="0">E</tspan></text>
+  </g>
+</svg>

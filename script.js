@@ -94,14 +94,14 @@ function checkLetters(correctWord, typedText, row) {
         let outputName = "output" + row + (i+1)
         let cell = document.getElementById(outputName)
         if (typedText[i].toUpperCase() === correctWord[i].toUpperCase()){
-            cell.style.backgroundColor = "lime";
+            cell.style.backgroundColor = "green";
         }
-        else if (correctWord.includes(typedText[i])) {
+        else if (correctWord.toUpperCase().includes(typedText[i].toUpperCase())) {
             cell.style.backgroundColor = "orange";
         }
         else {
             // Incorrect letter
-            cell.style.backgroundColor = "lightgrey";
+            cell.style.backgroundColor = "grey";
         }
     }
 }
