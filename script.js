@@ -50,7 +50,7 @@ document.addEventListener('keydown', (event) => {
         position--;
     } 
     else if (event.key.length === 1 && position < 5) { // Only process printable characters
-        typedText += event.key; // Append the key pressed to the text
+        typedText += event.key.toUpperCase(); // Append the key pressed to the text
         position++;
         outputName = "output" + row + position; // Update the outputName dynamically
 
@@ -81,11 +81,8 @@ function isWord(word) {
 }
 
 function checkWin(correctWord, typedText) {
-    if (typedText.toLowerCase() === correctWord.toLowerCase()) {
-        // Select all cells in the current row and set their background to green
-        document.querySelectorAll(".output").forEach(cell => {
-            cell.style.backgroundColor = "green";
-        });
+    if (typedText.toUpperCase() === correctWord.toUpperCase()) {
+
         alert("You guessed the correct word!");
         return true;
     }
@@ -96,7 +93,7 @@ function checkLetters(correctWord, typedText, row) {
     for (let i=0; i<5; i++) {
         let outputName = "output" + row + (i+1)
         let cell = document.getElementById(outputName)
-        if (typedText[i] === correctWord[i]){
+        if (typedText[i].toUpperCase() === correctWord[i].toUpperCase()){
             cell.style.backgroundColor = "lime";
         }
         else if (correctWord.includes(typedText[i])) {
@@ -104,7 +101,7 @@ function checkLetters(correctWord, typedText, row) {
         }
         else {
             // Incorrect letter
-            cell.style.backgroundColor = "grey";
+            cell.style.backgroundColor = "lightgrey";
         }
     }
 }

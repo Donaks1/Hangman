@@ -1,12 +1,18 @@
 body {
     margin: 0;
+    background-color: #a9c9ff;
 }
+
 .wordlebox {
     display: grid;
-    background-color: rgb(255, 255, 255);
+    background-color: #a9c9ff;
     width: 25rem;
     height: 5rem;
-    grid-template-columns: 5rem 5rem 5rem 5rem 5rem; 
+    grid-template-columns: 5rem 5rem 5rem 5rem 5rem;
+    gap: 1rem;
+    padding: 0.5rem;
+    margin-left: -4rem;
+
 }
 
 .wordlebox > div {
@@ -14,15 +20,24 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 5rem;
     font-size: 2rem;
 }
+
+/* .output {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
+  border: 1px solid #ddd;
+  font-size: 18px;
+} */
 
 .bigdiv {
     display: none;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    margin-top: -2rem;
 }
 
 .startscreen {
@@ -58,7 +73,7 @@ body {
 .game-title {
     text-align: center;
     font-size: 4rem; 
-    color: rgb(93, 93, 93);
+    color: rgb(0, 0, 0);
 }
 
 #overbox {
