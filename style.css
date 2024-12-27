@@ -11,7 +11,7 @@ body {
     height: auto; /* Allow height to adjust dynamically */
     grid-template-columns: repeat(5, 1fr); /* Adjust columns dynamically */
     gap: 0.4rem; /* Smaller gap for smaller screens */
-    padding: 0.4rem;
+    padding: 0.3rem;
     margin: 0 auto; /* Center the box on smaller screens */
 }
 
@@ -21,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 2rem; /* Default font size */
-    aspect-ratio: 1; /* Ensure squares maintain equal width and height */
+    aspect-ratio: 1;
 }
 
 /* Responsive adjustments */
@@ -147,16 +147,22 @@ body {
     width: 2.5rem;
 }
 
-/* #output {       
-    outline: none;             
-    caret-color: transparent;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+.keyboard {
+    width: 22rem;
+    height: 10rem;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(3,33%);
+    border: 2px solid rgb(0, 0, 0);
+}
+.key {
+    border: 2px solid rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 2rem;
-    overflow: hidden;
-    height: 3rem;
-    width: 3rem;
-    display: block;
-    position: relative;
-} */
+    background-color: grey;
+    color: white;
+    
+}
