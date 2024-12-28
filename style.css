@@ -149,12 +149,14 @@ body {
 
 .keyboard {
     width: 22rem;
-    height: 10rem;
-    background-color: rgb(255, 255, 255);
-    display: grid;
+    height: 2.3rem;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    /* display: grid;
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(3,33%);
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0); */
 }
 .key {
     border: 2px solid rgb(0, 0, 0);
@@ -164,5 +166,8 @@ body {
     font-size: 2rem;
     background-color: grey;
     color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.3rem;
     
 }
