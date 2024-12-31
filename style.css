@@ -86,9 +86,9 @@ body {
 
 .startbutton {
     background: rgb(191, 191, 191);
-    width: 12rem;
-    height: 5rem;
-    font-size: 2rem;
+    width: 10rem;
+    height: 4rem;
+    font-size: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;

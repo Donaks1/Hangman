@@ -117,14 +117,32 @@ function checkLetters(correctWord, typedText, row) {
         let cell = document.getElementById(outputName)
         if (typedText[i].toUpperCase() === correctWord[i].toUpperCase()){
             cell.style.backgroundColor = "green";
+            updateKeyboard(typedText[i].toUpperCase(),"green");
         }
         else if (correctWord.toUpperCase().includes(typedText[i].toUpperCase())) {
             cell.style.backgroundColor = "orange";
+            updateKeyboard(typedText[i].toUpperCase(),"orange");
         }
         else {
             // Incorrect letter
             cell.style.backgroundColor = "grey";
+            updateKeyboard(typedText[i].toUpperCase(),"grey");
         }
+    }
+}
+
+function updateKeyboard (letter, colour) {
+    let letterId = letter.toLowerCase();
+    let keyToChange = document.getElementById(letterId);
+    if (colour === "green") {
+    keyToChange.style.backgroundColor = "green"; 
+    }
+    else if (colour === "orange") {
+        keyToChange.style.backgroundColor = "orange"; 
+    }
+    else if (colour === "grey") {
+        keyToChange.style.backgroundColor = "black"; 
+        keyToChange.style.color= "grey";
     }
 }
 
@@ -173,10 +191,11 @@ enterButton.addEventListener("click", function () {
         else {
             checkWin(correctWord, typedText);
             checkLetters(correctWord, typedText, row);
-            
+            updateKeyboard(typedText);
             row++;
             position = 0;
             typedText = '';
+            
         }
     });
 });
