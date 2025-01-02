@@ -1,23 +1,73 @@
-// document.getElementById("startbutton").addEventListener("click", fetchWord)
+const easyButton = document.getElementById("easyButton");
+const hardButton = document.getElementById("hardButton");
+
+const difficultyScreen = document.querySelectorAll(".hidden2");
 
 let correctWord = ''; // Declare correctWord globally
 
-async function fetchWord() {
-    const apiURL = "https://random-word-api.herokuapp.com/word?length=5";
+async function fetchHardWord() {
+    try {
+        const apiURL = "https://random-word-api.herokuapp.com/word?length=5";
+        const response = await fetch(apiURL);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
-    const response = await fetch(apiURL);
+        const data = await response.json();
+        const word = data[0];
 
-    const data = await response.json();
+        if (!word || word.length !== 5) {
+            throw new Error('Invalid word received');
+        }
 
-    const word = data[0];
-    correctWord = word; // Assign the word to the global correctWord
-    return word;
+        correctWord = word;
+        return word;
+    } catch (error) {
+        console.error('Error fetching word:', error);
+        return 'YUMMY';
+    }
 }
 
-fetchWord().then((word) => {
-    let outputDiv1 = document.getElementById("test2");
-    outputDiv1.textContent = word;
-});
+
+
+hardButton.onclick = () => {
+    difficultyScreen.forEach(element => {
+        element.style.display = "none";
+    });
+    
+    fetchHardWord().then((word) => {
+        let outputDiv1 = document.getElementById("test2");
+        outputDiv1.textContent = word;
+    });
+};
+
+
+
+
+async function fetchNormalWord() {
+    const totalWords = 3103;
+    const response = await fetch("words.txt");
+    const text = await response.text();
+    const words=text.split(/\s+/);
+    const randomIndex = Math.floor(Math.random()*totalWords)
+    const word = words[randomIndex];
+
+    document.getElementById("test1").textContent=word;
+    correctWord=word;
+    return correctWord;
+}
+
+easyButton.onclick = () => {
+    difficultyScreen.forEach(element => {
+        element.style.display = "none";
+    });
+    fetchNormalWord().then((word) => {
+        let outputDiv = document.getElementById("test1");
+        outputDiv.textContent = word;
+    });
+}
+
 
 async function checkWord(typedText) {
 
@@ -30,17 +80,6 @@ async function checkWord(typedText) {
     return data;
 }
 
-// checkWord().then((data) => {
-//     let result = data.title;
-//     if (result === "No Definitions Found") {
-//         alert("not a real word :(");
-//     }
-// });
-
-
-
-
-
 const toHide = document.querySelectorAll(".hidden");
 const hideButton = document.getElementById("startbutton");
 
@@ -49,6 +88,9 @@ hideButton.addEventListener("click", function() {
         element.style.display="none";
     });
 });
+
+
+
 
 
 
@@ -82,30 +124,40 @@ document.addEventListener('keydown', (event) => {
 
     }
     else if (event.key === 'Enter' && position === 5) {
-        checkWord(typedText).then((data) => {
-            if (data.title === "No Definitions Found") {
-                alert("Not a real word :(");
-            } 
-            else {
-                checkWin(correctWord, typedText);
-                checkLetters(correctWord, typedText, row);
-                
-                row++;
-                position = 0;
-                typedText = '';
-            }
-        });
+        if (checkWin(correctWord, typedText)) {
+            alert("donaks latest");
+        }
+        else {
+            checkWord(typedText).then((data) => {
+                if (data.title === "No Definitions Found") {
+                    alert("Not a real word :(");
+                } 
+                else {
+                    checkWin(correctWord, typedText);
+                    checkLetters(correctWord, typedText, row);
+                    
+                    row++;
+                    position = 0;
+                    typedText = '';
+                }
+            });    
+        }
     }
     
 
-    let testdiv = document.getElementById("test");
-    testdiv.textContent = typedText;
+    // let testdiv = document.getElementById("test");
+    // testdiv.textContent = typedText;
 });
 
 function checkWin(correctWord, typedText) {
     if (typedText.toUpperCase() === correctWord.toUpperCase()) {
-
-        alert("You guessed the correct word!");
+        for (let i=0; i<5; i++) {
+            let outputName = "output" + row + (i+1)
+            let cell = document.getElementById(outputName)
+            cell.style.backgroundColor = "green";
+            updateKeyboard(typedText[i].toUpperCase(),"green");
+        }
+        alert("You guessed the correct word");
         return true;
     }
     return false;
@@ -184,20 +236,24 @@ backspaceButton.addEventListener("click", function() {
 });
 
 enterButton.addEventListener("click", function () {
-    checkWord(typedText).then((data) => {
-        if (data.title === "No Definitions Found") {
-            alert("Not a real word :(");
-        } 
-        else {
-            checkWin(correctWord, typedText);
-            checkLetters(correctWord, typedText, row);
-            updateKeyboard(typedText);
-            row++;
-            position = 0;
-            typedText = '';
-            
-        }
-    });
+    if (checkWin(correctWord, typedText)) {
+        alert("donaks latest");
+    }
+    else {
+        checkWord(typedText).then((data) => {
+            if (data.title === "No Definitions Found") {
+                alert("Not a real word :(");
+            } 
+            else {
+                checkWin(correctWord, typedText);
+                checkLetters(correctWord, typedText, row);
+                
+                row++;
+                position = 0;
+                typedText = '';
+            }
+        });    
+    }
 });
 
 aButton.addEventListener("click", function() {
@@ -459,5 +515,6 @@ zButton.addEventListener("click", function() {
         outputDiv.textContent = "Z";
     }
 });
+
 
 
