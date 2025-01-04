@@ -2,18 +2,19 @@ body {
     margin: 0;
     background-color: #000000;
     font-family: 'Arial Black', sans-serif;
+    overflow-x: hidden;
 }
 
 .wordlebox {
     display: grid;
     background-color: #000000;
-    width: 100%; /* Adjust width to be relative */
-    max-width: 18rem; /* Set a max width for larger screens */
-    height: auto; /* Allow height to adjust dynamically */
-    grid-template-columns: repeat(5, 1fr); /* Adjust columns dynamically */
-    gap: 0.4rem; /* Smaller gap for smaller screens */
+    width: 100%; 
+    max-width: 18rem; 
+    height: auto; 
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 0.4rem; 
     padding: 0.3rem;
-    margin: 0 auto; /* Center the box on smaller screens */
+    margin: 0 auto; 
     touch-action: manipulation;
 }
 
@@ -255,8 +256,8 @@ body {
 }
 
 .user-select-none {
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;     /* Internet Explorer */
-    user-select: none;         /* Standard */
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none;     
+    user-select: none;        
 }

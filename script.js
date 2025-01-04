@@ -242,7 +242,9 @@ backspaceButton.addEventListener("click", function() {
 });
 
 enterButton.addEventListener("click", function () {
+    if (position === 5) {
     enterPressed();
+    }
 });
 
 aButton.addEventListener("click", function() {
