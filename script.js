@@ -90,40 +90,18 @@ hideButton.addEventListener("click", function() {
 });
 
 
-
-
-
-
-
-let typedText = ''; // Variable to store the typed text
-let row = 1;
-let position = 0;
-let outputName = "output";
-
-// Add a keydown event listener to the document
-document.addEventListener('keydown', (event) => {
-    // Check for special keys like Backspace or Enter
-    if (event.key === 'Backspace') {
-        typedText = typedText.slice(0, -1); // Remove the last character
-        outputName = "output" + row + position; // Update the outputName dynamically
-        let outputDiv = document.getElementById(outputName)
-        outputDiv.textContent = '';
-        position--;
-    } 
-    else if (event.key.length === 1 && position < 5) { // Only process printable characters
-        typedText += event.key.toUpperCase(); // Append the key pressed to the text
-        position++;
-        outputName = "output" + row + position; // Update the outputName dynamically
-
-        // Check if the div exists, create it if it doesn't
-        let outputDiv = document.getElementById(outputName);
-        
-        // Update the output div
-        let lastLetter = typedText[typedText.length - 1];
-        outputDiv.textContent = lastLetter;
-
-    }
-    else if (event.key === 'Enter' && position === 5) {
+function enterPressed() {
+    let currentRowClass = ".row" + row;
+    let letterBoxes = document.querySelectorAll(currentRowClass);
+    // alert(currentRowClass);
+    letterBoxes.forEach(element => {
+        element.classList.remove("box-flip");
+        element.classList.add("box-flip");
+        element.addEventListener("animationend", () => {
+        element.classList.remove("box-flip");
+        });
+    });
+    setTimeout(() => {
         if (checkWin(correctWord, typedText)) {
             alert("donaks latest");
         }
@@ -142,11 +120,42 @@ document.addEventListener('keydown', (event) => {
                 }
             });    
         }
-    }
-    
+      }, 1000);
+}
 
-    // let testdiv = document.getElementById("test");
-    // testdiv.textContent = typedText;
+
+
+
+let typedText = '';
+let row = 1;
+let position = 0;
+let outputName = "output";
+
+// Add a keydown event listener to the document
+document.addEventListener('keydown', (event) => {
+    // Check for special keys like Backspace or Enter
+    if (event.key === 'Backspace') {
+        typedText = typedText.slice(0, -1); // Remove the last character
+        outputName = "output" + row + position; // Update the outputName dynamically
+        let outputDiv = document.getElementById(outputName)
+        outputDiv.textContent = '';
+        position--;
+    } 
+    else if (event.key.length === 1 && position < 5) { // Only process printable characters
+        typedText += event.key.toUpperCase(); // Append the key pressed to the text
+        position++;
+        outputName = "output" + row + position; // Update the outputName
+
+        let outputDiv = document.getElementById(outputName);
+        
+        // Update the output div
+        let lastLetter = typedText[typedText.length - 1];
+        outputDiv.textContent = lastLetter;
+
+    }
+    else if (event.key === 'Enter' && position === 5) {
+        enterPressed();
+    }
 });
 
 function checkWin(correctWord, typedText) {
@@ -236,24 +245,7 @@ backspaceButton.addEventListener("click", function() {
 });
 
 enterButton.addEventListener("click", function () {
-    if (checkWin(correctWord, typedText)) {
-        alert("donaks latest");
-    }
-    else {
-        checkWord(typedText).then((data) => {
-            if (data.title === "No Definitions Found") {
-                alert("Not a real word :(");
-            } 
-            else {
-                checkWin(correctWord, typedText);
-                checkLetters(correctWord, typedText, row);
-                
-                row++;
-                position = 0;
-                typedText = '';
-            }
-        });    
-    }
+    enterPressed();
 });
 
 aButton.addEventListener("click", function() {

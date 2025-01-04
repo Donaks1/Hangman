@@ -16,16 +16,20 @@ body {
     margin: 0 auto; /* Center the box on smaller screens */
 }
 
+.box-flip {
+    transform: rotateY(360deg);
+}
+
 .wordlebox > div {
     border: 2px solid #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem; /* Default font size */
+    font-size: 2rem; 
     aspect-ratio: 1;
+    transition: transform 2s ease;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .wordlebox {
         width: 90%; 
@@ -135,21 +139,27 @@ body {
 
 .easyhard {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    width: 20rem;
+    width: 25rem;
+    gap: 2rem;
 }
 
 .difficulty-button {
     width: 7rem;
     height: 3rem;
     border-radius: 1rem;
-    background-color: rgb(128, 128, 188);
+    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.7rem;
+}
 
+.difficulty-button:hover {
+    cursor: pointer;
+    background-color: rgb(31, 31, 31);
+    color: #ffffff;
 }
 
   #visibleInput {
