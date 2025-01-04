@@ -3,7 +3,7 @@ const hardButton = document.getElementById("hardButton");
 
 const difficultyScreen = document.querySelectorAll(".hidden2");
 
-let correctWord = ''; // Declare correctWord globally
+let correctWord = '';
 
 async function fetchHardWord() {
     try {
@@ -123,9 +123,6 @@ function enterPressed() {
       }, 1000);
 }
 
-
-
-
 let typedText = '';
 let row = 1;
 let position = 0;
@@ -136,12 +133,12 @@ document.addEventListener('keydown', (event) => {
     // Check for special keys like Backspace or Enter
     if (event.key === 'Backspace') {
         typedText = typedText.slice(0, -1); // Remove the last character
-        outputName = "output" + row + position; // Update the outputName dynamically
+        outputName = "output" + row + position; // Update the outputName
         let outputDiv = document.getElementById(outputName)
         outputDiv.textContent = '';
         position--;
     } 
-    else if (event.key.length === 1 && position < 5) { // Only process printable characters
+    else if (event.key.length === 1 && position < 5) {
         typedText += event.key.toUpperCase(); // Append the key pressed to the text
         position++;
         outputName = "output" + row + position; // Update the outputName
@@ -186,7 +183,7 @@ function checkLetters(correctWord, typedText, row) {
         }
         else {
             // Incorrect letter
-            cell.style.backgroundColor = "grey";
+            cell.style.backgroundColor = "#808080";
             updateKeyboard(typedText[i].toUpperCase(),"grey");
         }
     }
@@ -202,8 +199,8 @@ function updateKeyboard (letter, colour) {
         keyToChange.style.backgroundColor = "orange"; 
     }
     else if (colour === "grey") {
-        keyToChange.style.backgroundColor = "black"; 
-        keyToChange.style.color= "grey";
+        keyToChange.style.backgroundColor = "rgb(43, 43, 43)"; 
+        keyToChange.style.color= "white";
     }
 }
 
