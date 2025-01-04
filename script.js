@@ -93,17 +93,16 @@ hideButton.addEventListener("click", function() {
 function enterPressed() {
     let currentRowClass = ".row" + row;
     let letterBoxes = document.querySelectorAll(currentRowClass);
-    // alert(currentRowClass);
+    
     letterBoxes.forEach(element => {
-        element.classList.remove("box-flip");
         element.classList.add("box-flip");
         element.addEventListener("animationend", () => {
-        element.classList.remove("box-flip");
+            element.classList.remove("box-flip");
         });
+
     });
     setTimeout(() => {
         if (checkWin(correctWord, typedText)) {
-            alert("donaks latest");
         }
         else {
             checkWord(typedText).then((data) => {
@@ -120,7 +119,7 @@ function enterPressed() {
                 }
             });    
         }
-      }, 1000);
+      }, 400);
 }
 
 let typedText = '';
@@ -163,7 +162,6 @@ function checkWin(correctWord, typedText) {
             cell.style.backgroundColor = "green";
             updateKeyboard(typedText[i].toUpperCase(),"green");
         }
-        alert("You guessed the correct word");
         return true;
     }
     return false;
