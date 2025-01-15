@@ -285,3 +285,25 @@ body {
     z-index: 10000;
     display: none;
 }
+
+#correct-word {
+    font-size: 3rem;
+}
+
+.play-again-button {
+    background: rgb(56, 56, 56);
+    width: 12rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4rem;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    }
+    
+.play-again-button:hover {
+    background: rgb(31, 31, 31);
+    color: rgb(144, 203, 255);
+}

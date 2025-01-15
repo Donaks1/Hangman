@@ -145,7 +145,7 @@ function checkWin(correctWord, typedText) {
         winScreen.style.display = "flex";
 
         let displayedCorrectWord = document.getElementById("correct-word");
-        displayedCorrectWord.textContent = correctWord;
+        displayedCorrectWord.textContent = correctWord.toUpperCase();
 
         return true;
     }
