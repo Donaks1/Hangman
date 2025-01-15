@@ -13,27 +13,48 @@
   
 <body>
   
-  <div id="overbox" class="hidden">
-    <img src=donaksle.svg class="logo hidden">
+  <div id="title-start" class="title-screen">
+    <img src=donaksle.svg class="logo title-screen">
       <div class="easyhard">
-        <div id="startbutton" class="startbutton hidden">
+        <div id="startbutton" class="startbutton title-screen">
           START
         </div>
       </div>
   </div>
 
 
-  <div id="overbox2" class="hidden2">
-    <img src=donaksle.svg class="logo hidden2">
-    <h1 style="color: white;" class="hidden2">CHOOSE YOUR DIFFICULTY</h1>
-    <div class="easyhard hidden2">  
-      <div id="easyButton" class="difficulty-button hidden2">
+  <div id="difficulty-select" class="difficulty-screen">
+    <img src=donaksle.svg class="logo difficulty-screen">
+    <h1 style="color: white;" class="difficulty-screen">CHOOSE YOUR DIFFICULTY</h1>
+    <div class="easyhard difficulty-screen">  
+      <div id="easyButton" class="difficulty-button difficulty-screen">
           EASY
         </div>
-      <div id="hardButton" class="difficulty-button hidden2">
+      <div id="hardButton" class="difficulty-button difficulty-screen">
         HARD
       </div>
     </div>
+  </div>
+
+  <div id="win-screen">
+    <div class = "header">
+      <div class="navbar">
+        <a href="http://www.google.com"><img src="settings.svg" id="settings"></a>
+        <img src="question.svg" id="settings">
+        <img src="leaderboard.svg" id="settings">
+      </div>
+
+      <div onclick="window.location.reload()"><img src=donaksle.svg class="logo"></div>
+
+      <div class="navbar">
+        <a href="http://www.google.com"><img src="settings.svg" id="settings"></a>
+        <img src="question.svg" id="settings">
+        <img src="leaderboard.svg" id="settings">
+      </div>
+    </div>
+      <h1>CONGRATULATIONS!</h1>
+      <h2>You Guessed The Correct Word:</h4>
+        <div id="correct-word"> </div>
   </div>
 
 
